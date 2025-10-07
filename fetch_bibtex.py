@@ -158,7 +158,18 @@ if __name__ == "__main__":
         sys.stderr.write("No API key provided. Exiting.\n")
         sys.exit()
 
-    sys.stdout.write(f"api_key = {api_key}")
+    url = "https://pub.orcid.org/v3.0/"
+
+    headers = {
+        "Authorization": "Bearer" + api_key,
+    }
+
+    response = requests.get(url, headers=headers)
+
+    if response.status_code == 200:
+        print("✅ API key is valid!")
+    else:
+        print(f"❌ API key invalid or request failed (status {response.status_code})")
 
     # Load the member ID's
     with open('member_ids.txt', 'r', encoding='utf-8') as f:
