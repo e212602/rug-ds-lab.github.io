@@ -183,3 +183,5 @@ if __name__ == "__main__":
         
         with open(f"./_bibliography/{name}.bib", "w", encoding="utf-8") as f:
             f.write("\n\n".join(txt_arr))
+
+        sys.stdout.write("finish updating.\n")
