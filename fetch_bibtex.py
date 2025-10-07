@@ -158,7 +158,7 @@ if __name__ == "__main__":
         sys.stderr.write("No API key provided. Exiting.\n")
         sys.exit()
 
-    sys.stdout.write(f"Current working dir: {os.getcwd()}")
+    sys.stdout.write(f"api_key = {api_key}")
 
     # Load the member ID's
     with open('member_ids.txt', 'r', encoding='utf-8') as f:
