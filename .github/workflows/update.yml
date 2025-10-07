@@ -8,6 +8,8 @@ on:
 jobs:
   run-script:
     runs-on: ubuntu-latest
+    env:
+      API_KEY: ${{ secrets.API_KEY }}   # <--- add this line
 
     steps:
       - name: Checkout repo
@@ -25,6 +27,7 @@ jobs:
       - name: Run update script
         run: |
           python fetch_bibtex.py
+
 
       - name: Commit and push changes (if any)
         run: |
