@@ -158,19 +158,6 @@ if __name__ == "__main__":
         sys.stderr.write("No API key provided. Exiting.\n")
         sys.exit()
 
-    url = "https://pub.orcid.org/v3.0/"
-
-    headers = {
-        "Authorization": "Bearer" + api_key,
-    }
-
-    response = requests.get(url, headers=headers)
-
-    if response.status_code == 200:
-        print("✅ API key is valid!")
-    else:
-        print(f"❌ API key invalid or request failed (status {response.status_code})")
-
     # Load the member ID's
     with open('member_ids.txt', 'r', encoding='utf-8') as f:
         member_ids = [line.strip() for line in f]
@@ -179,6 +166,7 @@ if __name__ == "__main__":
     for member in member_ids:
         # Get the list of works from a member
         name = get_member_name(member, api_key)
+        print(name)
         work_codes = get_member_works(member, api_key, rug_filter=False)
         citations = get_bibtex(member, "/works/", work_codes, api_key)
         txt_arr: list[str] = []
