@@ -158,6 +158,7 @@ if __name__ == "__main__":
         sys.stderr.write("No API key provided. Exiting.\n")
         sys.exit()
 
+    sys.stdout.write("Current working dir:", os.getcwd())
 
     # Load the member ID's
     with open('member_ids.txt', 'r', encoding='utf-8') as f:
@@ -184,4 +185,4 @@ if __name__ == "__main__":
         with open(f"./_bibliography/{name}.bib", "w", encoding="utf-8") as f:
             f.write("\n\n".join(txt_arr))
 
-        sys.stdout.write("finish updating.\n")
+    sys.stdout.write("finish updating.\n")
