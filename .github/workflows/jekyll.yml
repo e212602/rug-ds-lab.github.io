@@ -25,9 +25,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Wait for push to register
-        run: sleep 5  # short delay to ensure new commit is fully processed
-
       - name: Checkout
         uses: actions/checkout@v4
         with:
