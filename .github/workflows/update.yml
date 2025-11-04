@@ -40,5 +40,6 @@ jobs:
             echo "✅ No changes to commit"
           else
             git commit -m "📚 bib update - $(date -u '+%Y-%m-%d %H:%M:%S')"
-            git push origin main
+            git push https://x-access-token:${{ secrets.PERSONAL_TOKEN }}@github.com/${{ github.repository }} main
+
           fi
