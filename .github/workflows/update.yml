@@ -2,11 +2,11 @@ name: Weekly Site Update
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
-  contents: read
+  contents: write
   pages: write
-  id-token: write
+  actions: write
 
-  
+
 on:
   schedule:
     - cron: '0 9 * * 1'   # every Monday at 09:00 UTC
