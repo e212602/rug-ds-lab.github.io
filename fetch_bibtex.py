@@ -157,8 +157,8 @@ if __name__ == "__main__":
         sys.stderr.write("No API key provided. Exiting.\n")
         sys.exit()
 
-    # Check if ./_bibliography exist
-    os.makedirs(os.path.dirname("./_bibliography"), exist_ok=True)
+    # Check if ./_bibliography/ exist
+    os.makedirs(os.path.dirname("./_bibliography/"), exist_ok=True)
 
     # Load the member ID's
     with open('member_ids.txt', 'r', encoding='utf-8') as f:
